@@ -48,6 +48,7 @@ int main(int argc, char* argv[])
 		Sleep(300);
 		while (TRUE)
 		{
+			//初始化为零
 			memset(szOutbuf, 0, 256);
 			PeekNamedPipe(MyReadPipe, szOutbuf, sizeof(szOutbuf - 1), &nReadBytes, NULL, NULL);  //立即返回，不会清除管道输出端数据
 			if (!nReadBytes) break;                                                              //没有数据可读了
